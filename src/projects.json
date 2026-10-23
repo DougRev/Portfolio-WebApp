@@ -1,0 +1,46 @@
+[
+  {
+    "id": "intentshot",
+    "title": "IntentShot",
+    "type": "apps",
+    "category": "Web app",
+    "coverSubtitle": "Web application",
+    "url": "https://app.intent-shot.com/",
+    "description": "My work on the IntentShot web application.",
+    "scope": "My work covers the app, not the marketing landing page.",
+    "action": "Open app"
+  },
+  {
+    "id": "ash-and-oath",
+    "title": "Ash and Oath",
+    "type": "games",
+    "category": "Game",
+    "coverSubtitle": "Browser game",
+    "url": "https://ash-and-oath.web.app/",
+    "description": "A game project you can play in the browser.",
+    "scope": "",
+    "action": "Play game"
+  },
+  {
+    "id": "project-rone",
+    "title": "Project Rone",
+    "type": "apps",
+    "category": "Web app",
+    "coverSubtitle": "Desktop-inspired web app",
+    "url": "https://project-rone.vercel.app/",
+    "description": "A web app with a Windows-inspired desktop interface.",
+    "scope": "",
+    "action": "Open app"
+  },
+  {
+    "id": "fuller-chiro",
+    "title": "Fuller Chiro",
+    "type": "websites",
+    "category": "Website",
+    "coverSubtitle": "Business website",
+    "url": "https://fuller-chiro-d66b1.web.app/",
+    "description": "A chiropractic practice website hosted on Firebase.",
+    "scope": "",
+    "action": "Visit website"
+  }
+]
