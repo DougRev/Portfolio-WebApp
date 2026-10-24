@@ -22,6 +22,10 @@ test('all four projects render with correct launch links and no errors', async (
     await expect(card.locator('.launch-button')).toHaveAttribute('rel', 'noopener noreferrer');
   }
   await expect(page.locator('#project-intentshot .project-scope')).toHaveText('My work covers the app, not the marketing landing page.');
+  const intentShotPreview = page.locator('#project-intentshot .app-screenshot');
+  await expect(intentShotPreview).toBeVisible();
+  await expect(intentShotPreview).toHaveAttribute('src', '/previews/intent-shot-image.png');
+  await expect.poll(() => intentShotPreview.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBe(1897);
   await expect(page.locator('a[href="https://intent-shot.com/"]')).toHaveCount(0);
   await page.evaluate(() => document.fonts.ready);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();

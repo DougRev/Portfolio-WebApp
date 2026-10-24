@@ -24,7 +24,7 @@ On a restricted cloud filesystem, use `npm --cache /tmp/interview-npm-cache ci`.
 
 ## Visual previews
 
-The current windows show real public entry-screen screenshots for Ash and Oath and Project Rone, and **labeled project covers** for IntentShot and Fuller Chiro. The capture browser could not reach IntentShot’s styling CDN or Fuller Chiro’s image storage, so incomplete screenshots of those apps were excluded. Covers are not presented as screenshots. No third-party preview service or iframe is required for the live buttons to work. IntentShot and Ash and Oath are marked as requiring sign-in; sign into them before presenting during the interview.
+The current windows show a user-provided analytics dashboard screenshot for IntentShot, public entry-screen screenshots for Ash and Oath and Project Rone, and a **labeled project cover** for Fuller Chiro. The capture browser could not reach Fuller Chiro’s image storage, so its incomplete screenshot was excluded. Covers are not presented as screenshots. No third-party preview service or iframe is required for the live buttons to work. IntentShot and Ash and Oath are marked as requiring sign-in; sign into them before presenting during the interview.
 
 To replace the covers with real public entry-screen screenshots:
 
@@ -33,7 +33,7 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run previews:capture
 npm run build
 ```
 
-The script captures only reachable public pages with HTTPS verification enabled, saves images in `public/previews/`, and updates `src/previews.json`. Failed captures retain existing previews and return a nonzero exit code. Successful screenshots are labeled “App screenshot.” Review them before deploying; signed-in app screens require separately supplied, sanitized images. Keep screenshots and the generated manifest together in version control.
+The script captures only reachable public pages with HTTPS verification enabled, saves images in `public/previews/`, and updates `src/previews.json`. Entries marked `"source": "user-provided"` are preserved, so refreshing public screenshots will not replace IntentShot’s signed-in dashboard with its login screen. Failed captures retain existing previews and return a nonzero exit code. Successful screenshots are labeled “App screenshot.” Review them before deploying; signed-in app screens require separately supplied, sanitized images. Keep screenshots and the generated manifest together in version control.
 
 Project metadata and links live in `src/projects.json`. Edit the intro in `src/main.ts` and appearance in `src/style.css`. The gallery has no database, credentials, analytics, or backend requirements.
 

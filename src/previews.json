@@ -1,4 +1,11 @@
 {
+  "intentshot": {
+    "src": "/previews/intent-shot-image.png",
+    "alt": "IntentShot analytics dashboard with shooting accuracy trends, skill proficiency radar, and daily shooting volume charts",
+    "width": 1897,
+    "height": 982,
+    "source": "user-provided"
+  },
   "ash-and-oath": {
     "src": "/previews/ash-and-oath.png",
     "alt": "Ash and Oath public entry screen",

@@ -8,7 +8,7 @@ interface Project {
   id: string; title: string; type: string; category: string; coverSubtitle: string;
   url: string; description: string; scope: string; action: string;
 }
-interface Preview { src: string; alt: string; capturedAt: string }
+interface Preview { src: string; alt: string; capturedAt?: string; source?: string; width?: number; height?: number }
 const projects: Project[] = projectData;
 const previews: Record<string, Preview> = previewData;
 const escape = (s: string) => s.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
@@ -17,7 +17,7 @@ const external = 'target="_blank" rel="noopener noreferrer"';
 
 function cover(project: Project) {
   const preview = previews[project.id];
-  if (preview) return `<img class="app-screenshot" src="${escape(preview.src)}" alt="${escape(preview.alt)}" width="1440" height="820" loading="lazy" decoding="async">`;
+  if (preview) return `<img class="app-screenshot" src="${escape(preview.src)}" alt="${escape(preview.alt)}" width="${preview.width || 1440}" height="${preview.height || 820}" loading="lazy" decoding="async">`;
   const title = project.id === 'ash-and-oath' ? 'Ash<span class="cover-and"> and </span>Oath'
     : project.id === 'project-rone' ? '<span class="retro-window"><span class="retro-titlebar"><span></span><span class="retro-controls">─ □ ×</span></span><span class="retro-title">Project Rone</span></span>'
     : escape(project.title);

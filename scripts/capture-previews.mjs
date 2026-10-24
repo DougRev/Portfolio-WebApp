@@ -14,6 +14,10 @@ const browser = await chromium.launch({ executablePath });
 let failures = 0;
 try {
   for (const project of projects) {
+    if (manifest[project.id]?.source === 'user-provided') {
+      console.log(`${project.title}: preserving user-provided screenshot`);
+      continue;
+    }
     const page = await browser.newPage({ viewport: { width: 1440, height: 820 }, deviceScaleFactor: 1 });
     try {
       const failedStyles = [];
