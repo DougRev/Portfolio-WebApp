@@ -48,10 +48,10 @@
     "title": "Dodi Deal",
     "type": "apps",
     "category": "Web app",
-    "coverSubtitle": "Web application",
+    "coverSubtitle": "Inventory · Orders · Loyalty",
     "url": "https://studio--dodi-deals.us-central1.hosted.app/",
-    "description": "An earlier web app project, available to explore live.",
-    "scope": "",
+    "description": "A commerce app for online ordering and in-store pickup, with inventory management, order fulfillment, and loyalty points.",
+    "scope": "Orders progress from started to fulfilled to picked up.",
     "action": "Open app"
   }
 ]

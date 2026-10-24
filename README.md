@@ -25,7 +25,7 @@ On a restricted cloud filesystem, use `npm --cache /tmp/interview-npm-cache ci`.
 
 ## Visual previews
 
-The current windows show a user-provided analytics dashboard screenshot for IntentShot, public entry-screen screenshots for Ash and Oath and Project Rone, and **labeled project covers** for Fuller Chiro and Dodi Deal. The capture browser could not reach Fuller Chiro’s image storage or Dodi Deal’s host, so incomplete screenshots were excluded. Dodi Deal’s description is limited to its owner-confirmed status as an earlier project until its features can be reviewed. Covers are not presented as screenshots. No third-party preview service or iframe is required for the live buttons to work. IntentShot and Ash and Oath are marked as requiring sign-in; sign into them before presenting during the interview.
+The current windows show a user-provided analytics dashboard screenshot for IntentShot, public entry-screen screenshots for Ash and Oath and Project Rone, and **labeled project covers** for Fuller Chiro and Dodi Deal. The capture browser could not reach Fuller Chiro’s image storage or Dodi Deal’s host, so incomplete screenshots were excluded. Dodi Deal’s owner confirmed online ordering with in-store pickup, inventory management, an order lifecycle from started to fulfilled to picked up, and loyalty points. These are owner-confirmed features; the external app’s internals have not been tested here. Covers are not presented as screenshots. No third-party preview service or iframe is required for the live buttons to work. IntentShot and Ash and Oath are marked as requiring sign-in; sign into them before presenting during the interview.
 
 To replace the covers with real public entry-screen screenshots:
 
