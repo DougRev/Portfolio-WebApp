@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('all four projects render with correct launch links and no errors', async ({ page }) => {
+test('all five projects render with correct launch links and no errors', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
@@ -12,6 +12,7 @@ test('all four projects render with correct launch links and no errors', async (
     ['ash-and-oath', 'https://ash-and-oath.web.app/'],
     ['project-rone', 'https://project-rone.vercel.app/'],
     ['fuller-chiro', 'https://fuller-chiro-d66b1.web.app/'],
+    ['dodi-deal', 'https://studio--dodi-deals.us-central1.hosted.app/'],
   ];
   for (const [id, url] of projects) {
     const card = page.locator(`#project-${id}`);
@@ -34,10 +35,11 @@ test('all four projects render with correct launch links and no errors', async (
 
 test('filters show the right projects and announce the result', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Web apps (2)', exact: true }).click();
-  await expect(page.locator('.project-card:visible')).toHaveCount(2);
+  await page.getByRole('button', { name: 'Web apps (3)', exact: true }).click();
+  await expect(page.locator('.project-card:visible')).toHaveCount(3);
   await expect(page.locator('#project-intentshot')).toBeVisible();
   await expect(page.locator('#project-project-rone')).toBeVisible();
+  await expect(page.locator('#project-dodi-deal')).toBeVisible();
   await page.getByRole('button', { name: 'Games (1)', exact: true }).click();
   await expect(page.locator('.project-card:visible')).toHaveCount(1);
   await expect(page.locator('#project-ash-and-oath')).toBeVisible();
@@ -46,8 +48,8 @@ test('filters show the right projects and announce the result', async ({ page })
   await page.getByRole('button', { name: 'Websites (1)', exact: true }).click();
   await expect(page.locator('.project-card:visible')).toHaveCount(1);
   await expect(page.locator('#project-fuller-chiro')).toBeVisible();
-  await page.getByRole('button', { name: 'All projects (4)', exact: true }).click();
-  await expect(page.locator('.project-card:visible')).toHaveCount(4);
+  await page.getByRole('button', { name: 'All projects (5)', exact: true }).click();
+  await expect(page.locator('.project-card:visible')).toHaveCount(5);
 });
 
 test('preview window and button open the real destination in a new tab', async ({ page, context }) => {
@@ -82,7 +84,7 @@ test('keyboard navigation reaches skip link, filters, and project previews', asy
 test('missing screenshot files fall back to a labeled cover without breaking launch links', async ({ page }) => {
   await page.route('**/previews/*.png', route => route.abort());
   await page.goto('/');
-  await expect(page.locator('.project-cover')).toHaveCount(4);
+  await expect(page.locator('.project-cover')).toHaveCount(5);
   await expect(page.locator('.app-screenshot')).toHaveCount(0);
   await expect(page.locator('#project-ash-and-oath .preview-caption')).toHaveText('Project cover · Sign-in required');
   await expect(page.locator('#project-project-rone .launch-button')).toHaveAttribute('href', 'https://project-rone.vercel.app/');

@@ -40,6 +40,7 @@ h1 { font-size: clamp(44px, 6vw, 82px); font-weight: 800; line-height: 1.12; let
 .cover-title { font-size: clamp(38px, 6vw, 80px); font-weight: 800; letter-spacing: -.07em; line-height: 1; }
 .cover-subtitle { font-size: clamp(12px, 1.25vw, 17px); letter-spacing: .19em; text-align: center; }
 .cover-intentshot { background: #a8b39d; color: #173f34; }
+.cover-dodi-deal { background: #e4dac0; color: #354637; }
 .cover-ash-and-oath { background: #222321; color: #ee714c; }
 .cover-ash-and-oath .cover-title { font-family: Georgia, 'Times New Roman', serif; font-weight: 500; font-size: clamp(36px, 5.7vw, 78px); letter-spacing: -.065em; }
 .cover-and { font-size: .55em; color: #d89b56; }

@@ -42,5 +42,16 @@
     "description": "A chiropractic practice website hosted on Firebase.",
     "scope": "",
     "action": "Visit website"
+  },
+  {
+    "id": "dodi-deal",
+    "title": "Dodi Deal",
+    "type": "apps",
+    "category": "Web app",
+    "coverSubtitle": "Web application",
+    "url": "https://studio--dodi-deals.us-central1.hosted.app/",
+    "description": "An earlier web app project, available to explore live.",
+    "scope": "",
+    "action": "Open app"
   }
 ]

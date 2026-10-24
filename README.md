@@ -1,11 +1,12 @@
 # Doug’s interview app showcase
 
-A compact, responsive launcher for four real projects. Each browser-style window and its launch button opens the live project in a separate tab, so the gallery stays ready for the next interview demo.
+A compact, responsive launcher for five real projects. Each browser-style window and its launch button opens the live project in a separate tab, so the gallery stays ready for the next interview demo.
 
 - IntentShot links only to **https://app.intent-shot.com/**. The separate marketing landing page is not Doug’s work.
 - Ash and Oath: https://ash-and-oath.web.app/
 - Project Rone: https://project-rone.vercel.app/
 - Fuller Chiro: https://fuller-chiro-d66b1.web.app/
+- Dodi Deal: https://studio--dodi-deals.us-central1.hosted.app/
 
 The restored workspace did not contain the earlier portfolio source or commits, so this is a new implementation based on the confirmed project list. No existing source was overwritten. The deployed portfolio is unchanged until a Firebase deployment succeeds.
 
@@ -24,7 +25,7 @@ On a restricted cloud filesystem, use `npm --cache /tmp/interview-npm-cache ci`.
 
 ## Visual previews
 
-The current windows show a user-provided analytics dashboard screenshot for IntentShot, public entry-screen screenshots for Ash and Oath and Project Rone, and a **labeled project cover** for Fuller Chiro. The capture browser could not reach Fuller Chiro’s image storage, so its incomplete screenshot was excluded. Covers are not presented as screenshots. No third-party preview service or iframe is required for the live buttons to work. IntentShot and Ash and Oath are marked as requiring sign-in; sign into them before presenting during the interview.
+The current windows show a user-provided analytics dashboard screenshot for IntentShot, public entry-screen screenshots for Ash and Oath and Project Rone, and **labeled project covers** for Fuller Chiro and Dodi Deal. The capture browser could not reach Fuller Chiro’s image storage or Dodi Deal’s host, so incomplete screenshots were excluded. Dodi Deal’s description is limited to its owner-confirmed status as an earlier project until its features can be reviewed. Covers are not presented as screenshots. No third-party preview service or iframe is required for the live buttons to work. IntentShot and Ash and Oath are marked as requiring sign-in; sign into them before presenting during the interview.
 
 To replace the covers with real public entry-screen screenshots:
 
