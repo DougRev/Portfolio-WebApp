@@ -17,7 +17,7 @@ const external = 'target="_blank" rel="noopener noreferrer"';
 
 function cover(project: Project) {
   const preview = previews[project.id];
-  if (preview) return `<img class="app-screenshot" src="${escape(preview.src)}" alt="${escape(preview.alt)}" width="${preview.width || 1440}" height="${preview.height || 820}" loading="lazy" decoding="async">`;
+  if (preview) return `<img class="app-screenshot${preview.source === 'user-provided' ? ' supplied-screenshot' : ''}" src="${escape(preview.src)}" alt="${escape(preview.alt)}" width="${preview.width || 1440}" height="${preview.height || 820}" loading="lazy" decoding="async">`;
   const title = project.id === 'ash-and-oath' ? 'Ash<span class="cover-and"> and </span>Oath'
     : project.id === 'project-rone' ? '<span class="retro-window"><span class="retro-titlebar"><span></span><span class="retro-controls">─ □ ×</span></span><span class="retro-title">Project Rone</span></span>'
     : escape(project.title);

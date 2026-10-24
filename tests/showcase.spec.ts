@@ -27,6 +27,15 @@ test('all five projects render with correct launch links and no errors', async (
   await expect(intentShotPreview).toBeVisible();
   await expect(intentShotPreview).toHaveAttribute('src', '/previews/intent-shot-image.png');
   await expect.poll(() => intentShotPreview.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBe(1897);
+  for (const [id, file] of [['fuller-chiro', 'fuller-chiro-image.png'], ['dodi-deal', 'dodi-deals-image.png']]) {
+    const preview = page.locator(`#project-${id} .app-screenshot`);
+    await expect(preview).toHaveAttribute('src', `/previews/${file}`);
+    await preview.scrollIntoViewIfNeeded();
+    await expect.poll(() => preview.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBeTruthy();
+    await expect(page.locator(`#project-${id} .preview-caption`)).toContainText('App screenshot');
+  }
+  await expect(page.locator('.app-screenshot')).toHaveCount(5);
+  await expect(page.locator('.project-cover')).toHaveCount(0);
   await expect(page.locator('a[href="https://intent-shot.com/"]')).toHaveCount(0);
   await page.evaluate(() => document.fonts.ready);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
@@ -84,6 +93,10 @@ test('keyboard navigation reaches skip link, filters, and project previews', asy
 test('missing screenshot files fall back to a labeled cover without breaking launch links', async ({ page }) => {
   await page.route('**/previews/*.png', route => route.abort());
   await page.goto('/');
+  for (const card of await page.locator('.project-card').all()) {
+    await card.scrollIntoViewIfNeeded();
+    await expect(card.locator('.project-cover')).toBeVisible();
+  }
   await expect(page.locator('.project-cover')).toHaveCount(5);
   await expect(page.locator('.app-screenshot')).toHaveCount(0);
   await expect(page.locator('#project-ash-and-oath .preview-caption')).toHaveText('Project cover · Sign-in required');

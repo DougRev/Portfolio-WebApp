@@ -58,7 +58,7 @@ h1 { font-size: clamp(44px, 6vw, 82px); font-weight: 800; line-height: 1.12; let
 .preview-hover { position: absolute; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 8px; background: var(--paper); color: var(--green); padding: 8px 12px; font-size: 14px; border-radius: 4px; opacity: 0; transform: translateY(4px); transition: opacity .2s, transform .2s; pointer-events: none; }
 .preview-window:hover .preview-hover, .preview-window:focus-visible .preview-hover { opacity: 1; transform: none; }
 .app-screenshot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-#project-intentshot .app-screenshot { object-fit: contain; background: #f8fafc; }
+.app-screenshot.supplied-screenshot { object-fit: contain; background: #f8fafc; }
 .card-content { padding: 17px 18px 13px; display: flex; flex-direction: column; flex: 1; }
 .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 h2 { font-size: 28px; line-height: 1.15; letter-spacing: -.045em; font-weight: 750; }
