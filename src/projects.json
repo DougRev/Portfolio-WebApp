@@ -35,13 +35,13 @@
   {
     "id": "fuller-chiro",
     "title": "Fuller Chiro",
-    "type": "websites",
-    "category": "Website",
-    "coverSubtitle": "Business website",
+    "type": "apps",
+    "category": "Web app",
+    "coverSubtitle": "Business web application",
     "url": "https://fuller-chiro-d66b1.web.app/",
-    "description": "A chiropractic practice website hosted on Firebase.",
+    "description": "A chiropractic practice web app hosted on Firebase.",
     "scope": "",
-    "action": "Visit website"
+    "action": "Open app"
   },
   {
     "id": "dodi-deal",

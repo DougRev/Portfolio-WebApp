@@ -40,12 +40,13 @@ function card(project: Project) {
   </article>`;
 }
 
-const filters: [Category, string][] = [['all', 'All projects'], ['apps', 'Web apps'], ['games', 'Games'], ['websites', 'Websites']];
+const filterOptions: [Category, string][] = [['all', 'All projects'], ['apps', 'Web apps'], ['games', 'Games'], ['websites', 'Websites']];
+const filters = filterOptions.filter(([key]) => key === 'all' || projects.some(project => project.type === key));
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <a class="skip-link" href="#work">Skip to projects</a>
   <header class="site-header container"><a class="wordmark" href="#top" aria-label="Doug, home">Doug.</a><nav aria-label="Main navigation"><a href="#work">Projects</a><a href="https://github.com/DougRev" ${external}>GitHub<span class="sr-only"> (opens in a new tab)</span></a></nav></header>
   <main class="container" id="work" tabindex="-1"><div id="top"></div>
-    <section class="intro" aria-labelledby="page-title"><h1 id="page-title">Built to be explored.</h1><p>Web apps, games, and websites. Pick a project and jump into the live experience.</p></section>
+    <section class="intro" aria-labelledby="page-title"><h1 id="page-title">Built to be explored.</h1><p>Web apps and games. Pick a project and jump into the live experience.</p></section>
     <div class="filters" role="group" aria-label="Filter projects">${filters.map(([key, name]) => `<button type="button" class="filter-button" data-filter="${key}" aria-pressed="${key === 'all'}" aria-controls="project-gallery">${name} (${key === 'all' ? projects.length : projects.filter(project => project.type === key).length})</button>`).join('')}</div>
     <p class="sr-only" role="status" id="filter-status" aria-live="polite">Showing all ${projects.length} projects.</p>
     <section class="project-grid" id="project-gallery" aria-label="Live project showcase">${projects.map(card).join('')}</section>

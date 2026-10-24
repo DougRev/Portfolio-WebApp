@@ -44,19 +44,19 @@ test('all five projects render with correct launch links and no errors', async (
 
 test('filters show the right projects and announce the result', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Web apps (3)', exact: true }).click();
-  await expect(page.locator('.project-card:visible')).toHaveCount(3);
+  await page.getByRole('button', { name: 'Web apps (4)', exact: true }).click();
+  await expect(page.locator('.project-card:visible')).toHaveCount(4);
   await expect(page.locator('#project-intentshot')).toBeVisible();
   await expect(page.locator('#project-project-rone')).toBeVisible();
   await expect(page.locator('#project-dodi-deal')).toBeVisible();
+  await expect(page.locator('#project-fuller-chiro')).toBeVisible();
+  await expect(page.locator('#project-fuller-chiro .project-category')).toHaveText('Web app');
   await page.getByRole('button', { name: 'Games (1)', exact: true }).click();
   await expect(page.locator('.project-card:visible')).toHaveCount(1);
   await expect(page.locator('#project-ash-and-oath')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Games (1)', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(page.getByRole('status')).toHaveText('Showing 1 game.');
-  await page.getByRole('button', { name: 'Websites (1)', exact: true }).click();
-  await expect(page.locator('.project-card:visible')).toHaveCount(1);
-  await expect(page.locator('#project-fuller-chiro')).toBeVisible();
+  await expect(page.getByRole('button', { name: /Websites/ })).toHaveCount(0);
   await page.getByRole('button', { name: 'All projects (5)', exact: true }).click();
   await expect(page.locator('.project-card:visible')).toHaveCount(5);
 });
@@ -85,7 +85,6 @@ test('keyboard navigation reaches skip link, filters, and project previews', asy
   await games.focus();
   await page.keyboard.press('Enter');
   await expect(page.locator('.project-card:visible')).toHaveCount(1);
-  await page.keyboard.press('Tab');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Launch Ash and Oath in a new tab' })).toBeFocused();
 });
